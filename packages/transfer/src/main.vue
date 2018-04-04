@@ -5,6 +5,7 @@
       ref="leftPanel"
       :data="sourceData"
       :title="titles[0] || t('el.transfer.titles.0')"
+      :no-data-text="noDataText[0]"
       :default-checked="leftDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       @checked-change="onSourceCheckedChange">
@@ -33,6 +34,7 @@
       ref="rightPanel"
       :data="targetData"
       :title="titles[1] || t('el.transfer.titles.1')"
+      :no-data-text="noDataText[1]"
       :default-checked="rightDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       @checked-change="onTargetCheckedChange">
@@ -121,6 +123,12 @@
       targetOrder: {
         type: String,
         default: 'original'
+      },
+      noDataText: {
+        type: Array,
+        default() {
+          return [];
+        }
       }
     },
 
