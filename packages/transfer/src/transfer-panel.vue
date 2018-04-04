@@ -43,7 +43,7 @@
         v-show="hasNoMatch">{{ t('el.transfer.noMatch') }}</p>
       <p
         class="el-transfer-panel__empty"
-        v-show="data.length === 0 && !hasNoMatch">{{ t('el.transfer.noData') }}</p>
+        v-show="data.length === 0 && !hasNoMatch">{{ noDataText }}</p>
     </div>
     <p class="el-transfer-panel__footer" v-if="hasFooter">
       <slot></slot>
@@ -104,7 +104,8 @@
       format: Object,
       filterMethod: Function,
       defaultChecked: Array,
-      props: Object
+      props: Object,
+      noDataText: String
     },
 
     data() {
